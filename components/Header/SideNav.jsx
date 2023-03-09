@@ -1,4 +1,13 @@
-import { Box, Button, Divider, Slide, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import CustomIcon from "../CustomIcon";
 import LangSwitcher from "../LangSwitcher";
@@ -7,12 +16,13 @@ import StoreLocator from "./SearchNav/StoreLocator";
 
 const SideNav = () => {
   const { locale } = useRouter();
-  const { isOpen, onToggle } = useDisclosure();
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       <Button
-        onClick={onToggle}
+        onClick={onOpen}
         variant='unstyled'
         minW='fit-content'
         minH='fit-content'>
@@ -23,19 +33,24 @@ const SideNav = () => {
           alt='hamburger menu'
         />
       </Button>
-      <Slide
-        direction={locale === "en" ? "left" : "right"}
-        in={isOpen}
-        style={{ zIndex: 10 }}>
-        <Box w='100%' h='100svh' backgroundColor='rgba(18, 18, 18, 0.8)'>
-          <Box w='90%' h='100svh' backgroundColor='white' overflowY='auto'>
+      <Drawer
+        placement={locale === "en" ? "left" : "right"}
+        onClose={onClose}
+        isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent
+          w='90%'
+          h='100svh'
+          backgroundColor='white'
+          overflowY='auto'>
+          <DrawerBody>
             <Button
               my={5}
               ms={5}
               variant='unstyled'
               minW='fit-content'
               minH='fit-content'
-              onClick={onToggle}>
+              onClick={onClose}>
               <CustomIcon w={32} h={32} src='/Group 3230.svg' alt='close' />
             </Button>
             <Divider />
@@ -45,9 +60,9 @@ const SideNav = () => {
             <Divider />
             <MainNav />
             <LangSwitcher />
-          </Box>
-        </Box>
-      </Slide>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </>
   );
 };

@@ -6,6 +6,14 @@ const nextConfig = {
     locales: ['en', 'ar'],
     defaultLocale: 'en',
   },
+  images: {
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'gazef.s3.amazonaws.com',
+      port: '',
+      pathname: '/FebApiTask/**',
+    }, ],
+  },
 }
 
 module.exports = nextConfig
