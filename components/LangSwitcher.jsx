@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 function LangSwitcher() {
@@ -9,7 +10,15 @@ function LangSwitcher() {
   };
 
   return (
-    <button onClick={onClick}>{locale === "en" ? "العربية" : "English"}</button>
+    <Button
+      onClick={onClick}
+      variant='unstyled'
+      minW='fit-content'
+      minH='fit-content'
+      mx={3}
+      fontWeight='semibold'>
+      {locale === "en" ? "العربية" : "English"}
+    </Button>
   );
 }
 

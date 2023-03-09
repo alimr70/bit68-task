@@ -5,7 +5,7 @@ const SearchInput = () => {
   const { locale } = useRouter();
 
   return (
-    <Box w={[335, 335, 435, 435, 600]} mx={5}>
+    <Box mx={5}>
       <Input
         style={{
           background: `url("/vuesax-linear-search-normal.png") no-repeat ${
