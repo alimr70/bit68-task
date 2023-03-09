@@ -15,8 +15,10 @@ function LangSwitcher() {
       variant='unstyled'
       minW='fit-content'
       minH='fit-content'
-      mx={3}
-      fontWeight='semibold'>
+      mx={{ base: 5, md: 3 }}
+      my={{ base: 7, md: 0 }}
+      fontWeight='semibold'
+      color='#2D2F82'>
       {locale === "en" ? "العربية" : "English"}
     </Button>
   );

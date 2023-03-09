@@ -8,7 +8,7 @@ const SearchInput = () => {
     <Box mx={5}>
       <Input
         style={{
-          background: `url("/vuesax-linear-search-normal.png") no-repeat ${
+          background: `url("/vuesax-linear-search-normal.svg") no-repeat ${
             locale === "ar" ? "32px" : "calc(100% - 32px)"
           }`,
         }}

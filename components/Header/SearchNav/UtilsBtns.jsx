@@ -13,7 +13,7 @@ const UtilsBtns = () => {
           <CustomIcon
             w={24}
             h={24}
-            src='/vuesax-bold-frame.png'
+            src='/vuesax-bold-frame.svg'
             alt='profile'
           />
         </Button>
@@ -26,7 +26,7 @@ const UtilsBtns = () => {
           <CustomIcon
             w={29}
             h={28}
-            src='/Component 26 – 2.png'
+            src='/Component 26 – 2.svg'
             alt='shopping cart'
           />
         </Button>

@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import CustomIcon from "../../CustomIcon";
+import SideNav from "../SideNav";
 import SearchInput from "./SearchInput";
 import StoreLocator from "./StoreLocator";
 import UtilsBtns from "./UtilsBtns";
@@ -20,12 +21,13 @@ export default function SearchNav() {
           <SearchInput />
         </Box>
         <Box display={{ base: "block", md: "none" }} me='auto'>
-          <CustomIcon
+          {/* <CustomIcon
             w={32}
             h={32}
-            src='/vuesax-linear-menu.png'
+            src='/vuesax-linear-menu.svg'
             alt='hamburger menu'
-          />
+          /> */}
+          <SideNav />
         </Box>
         <UtilsBtns />
       </Flex>
