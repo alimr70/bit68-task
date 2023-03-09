@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 
-export const SaleNav = () => {
+export const SaleNav = ({ title }) => {
   return (
     <Box
       backgroundColor='#2D2F87'
@@ -10,7 +10,7 @@ export const SaleNav = () => {
       justifyContent='center'
       alignItems='center'>
       <Text fontSize={[12, 14]} color='white'>
-        White Friday sales up to 70% off
+        {title}
       </Text>
     </Box>
   );
