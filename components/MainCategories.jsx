@@ -102,23 +102,14 @@ const MainCategories = () => {
           <Box mx={{ base: 5, md: 36 }}>
             <Slider {...settings} ref={(slider) => setSlider(slider)}>
               {categoriesData.map((img, index) => (
-                <Box
-                  key={index}
-                  textAlign='center'
-                  my={6}
-                  // position='relative'
-                  // backgroundPosition='center'
-                  // backgroundRepeat='no-repeat'
-                  // backgroundSize='cover'
-                  // backgroundImage={`url(${img.image})`}
-                >
+                <Box key={index} textAlign='center' my={6}>
                   <Image
                     width={width}
                     height={height}
                     src={img.image}
                     alt={img.name}
                   />
-                  <Text fontSize={20}>{img.name}</Text>
+                  <Text fontSize={{ base: 16, md: 20 }}>{img.name}</Text>
                 </Box>
               ))}
             </Slider>
