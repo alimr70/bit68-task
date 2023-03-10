@@ -10,9 +10,8 @@ const nextConfig = {
     remotePatterns: [{
       protocol: 'https',
       hostname: 'gazef.s3.amazonaws.com',
-      port: '',
       pathname: '/FebApiTask/**',
-    }, ],
+    }],
   },
 }
 

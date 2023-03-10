@@ -1,7 +1,8 @@
 import { Container } from "@chakra-ui/react";
 import Head from "next/head";
 import Header from "../components/Header";
-import ImageSlider from "../components/ImageSlider";
+import HeroSlider from "../components/HeroSlider";
+import MainCategories from "../components/MainCategories";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <ImageSlider />
+      <HeroSlider />
+      <MainCategories />
     </Container>
   );
 }
