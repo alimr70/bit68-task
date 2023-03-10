@@ -3,6 +3,8 @@ import Head from "next/head";
 import Header from "../components/Header";
 import HeroSlider from "../components/HeroSlider";
 import CategoriesAndBrands from "../components/CategoriesAndBrands";
+import ImageSaleSection from "../components/ImageSaleSection";
+import FeaturedAndMostViewed from "../components/FeaturedAndMostViewed";
 
 export default function Home() {
   return (
@@ -15,7 +17,21 @@ export default function Home() {
       <Header />
       <HeroSlider />
       <CategoriesAndBrands type='categories' />
+      <ImageSaleSection
+        src={{ base: "/Group 1352.png", sm: "/Mask Group 6.png" }}
+        h={{ base: 362, sm: 350 }}
+        w={{ base: 375, sm: 1440 }}
+        alt="let's get active"
+      />
       <CategoriesAndBrands type='brands' />
+      <ImageSaleSection
+        src={{ base: "/Group 1339.png" }}
+        h={{ base: 119, sm: 456 }}
+        w={{ base: 375, sm: 1440 }}
+        alt="let's get active"
+      />
+      <FeaturedAndMostViewed type='featured' />
+      <FeaturedAndMostViewed type='most_viewed' />
     </Container>
   );
 }

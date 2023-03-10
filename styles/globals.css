@@ -253,3 +253,34 @@ body {
   width: 50px;
   border-radius: 10px;
 }
+
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #2D2F7D;
+  border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D2F7D;
+}
