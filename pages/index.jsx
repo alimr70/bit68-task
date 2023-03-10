@@ -2,7 +2,7 @@ import { Container } from "@chakra-ui/react";
 import Head from "next/head";
 import Header from "../components/Header";
 import HeroSlider from "../components/HeroSlider";
-import MainCategories from "../components/MainCategories";
+import CategoriesAndBrands from "../components/CategoriesAndBrands";
 
 export default function Home() {
   return (
@@ -14,7 +14,8 @@ export default function Home() {
       </Head>
       <Header />
       <HeroSlider />
-      <MainCategories />
+      <CategoriesAndBrands type='categories' />
+      <CategoriesAndBrands type='brands' />
     </Container>
   );
 }

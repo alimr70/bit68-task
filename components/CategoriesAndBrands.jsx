@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   Heading,
   IconButton,
   Skeleton,
@@ -11,7 +12,7 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import CustomIcon from "./CustomIcon";
 
-const MainCategories = () => {
+const CategoriesAndBrands = ({ type }) => {
   const [slider, setSlider] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [categoriesData, setCategoriesData] = useState([]);
@@ -30,9 +31,11 @@ const MainCategories = () => {
   const side = useBreakpointValue({ base: "30%", md: "10px" });
   const width = useBreakpointValue({ base: 100, md: 140 });
   const height = useBreakpointValue({ base: 100, md: 140 });
+  const brandWidth = useBreakpointValue({ base: 57, md: 76 });
+  const brandHeight = useBreakpointValue({ base: 54, md: 73 });
 
   const categories = async () => {
-    const res = await fetch("api/categories");
+    const res = await fetch(`api/categoriesAndBrands/${type}`);
     const data = await res.json();
     if (data) {
       setIsLoading(false);
@@ -52,7 +55,7 @@ const MainCategories = () => {
           mx={{ base: 5, lg: 20 }}
           fontSize={{ base: 16, md: 30 }}
           color='#2D2F78'>
-          Main Categories
+          {type === "categories" ? "Main Categories" : "Popular Brands"}
         </Heading>
         <Box
           position={"relative"}
@@ -103,13 +106,35 @@ const MainCategories = () => {
             <Slider {...settings} ref={(slider) => setSlider(slider)}>
               {categoriesData.map((img, index) => (
                 <Box key={index} textAlign='center' my={6}>
-                  <Image
-                    width={width}
-                    height={height}
-                    src={img.image}
-                    alt={img.name}
-                  />
-                  <Text fontSize={{ base: 16, md: 20 }}>{img.name}</Text>
+                  {type === "categories" ? (
+                    <Image
+                      width={width}
+                      height={height}
+                      src={img.image}
+                      alt={img.name}
+                    />
+                  ) : (
+                    <Flex
+                      mx='auto'
+                      align='center'
+                      justify='center'
+                      w={width}
+                      h={height}
+                      backgroundColor='#2D2F7D'
+                      borderRadius='50%'>
+                      <Image
+                        width={brandWidth}
+                        height={brandHeight}
+                        src={img.image}
+                        alt={img.sale_percentage}
+                      />
+                    </Flex>
+                  )}
+                  <Text fontSize={{ base: 16, md: 20 }}>
+                    {type === "categories"
+                      ? img.name
+                      : `Up to ${img.sale_percentage}%`}
+                  </Text>
                 </Box>
               ))}
             </Slider>
@@ -119,4 +144,4 @@ const MainCategories = () => {
     </Skeleton>
   );
 };
-export default MainCategories;
+export default CategoriesAndBrands;

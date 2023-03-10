@@ -1,6 +1,7 @@
 export default async function handler(req, res) {
+  const { type } = req.query
   try {
-    const response = await fetch('https://api-task.bit68.com/en/api/categories/')
+    const response = await fetch(`https://api-task.bit68.com/en/api/${type}/`)
     const data = await response.json()
     let results = [...data.results]
     while (data.next) {
