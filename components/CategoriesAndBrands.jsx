@@ -23,7 +23,7 @@ const CategoriesAndBrands = ({ type }) => {
     fade: false,
     infinite: true,
     autoplay: false,
-    slidesToShow: useBreakpointValue({ base: 3, sm: 3, lg: 4, xl: 5 }),
+    slidesToShow: useBreakpointValue({ base: 2, sm: 3, lg: 4, xl: 5 }),
     slidesToScroll: 1,
   };
 
@@ -105,7 +105,7 @@ const CategoriesAndBrands = ({ type }) => {
           <Box mx={{ base: 5, md: 36 }}>
             <Slider {...settings} ref={(slider) => setSlider(slider)}>
               {categoriesData.map((img, index) => (
-                <Box key={index} textAlign='center' my={6}>
+                <Box key={index} textAlign='center' my={6} mx={8}>
                   {type === "categories" ? (
                     <Image
                       width={width}
