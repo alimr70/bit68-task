@@ -1,10 +1,12 @@
-import { Container } from "@chakra-ui/react";
+import { Container, Divider } from "@chakra-ui/react";
 import Head from "next/head";
 import Header from "../components/Header";
 import HeroSlider from "../components/HeroSlider";
 import CategoriesAndBrands from "../components/CategoriesAndBrands";
 import ImageSaleSection from "../components/ImageSaleSection";
 import FeaturedAndMostViewed from "../components/FeaturedAndMostViewed";
+import BrandSale from "../components/BrandSale";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -32,6 +34,9 @@ export default function Home() {
       />
       <FeaturedAndMostViewed type='featured' />
       <FeaturedAndMostViewed type='most_viewed' />
+      <BrandSale />
+      <Divider />
+      <Footer />
     </Container>
   );
 }
