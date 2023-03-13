@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <Box w='100%'>
       <Flex
-        width={{ base: "100%", lg: "50%" }}
+        width={{ base: "auto", lg: "50%" }}
         flexDirection={{ base: "column", sm: "row" }}
         mx={{ base: 5, lg: 20 }}
         py={14}>
